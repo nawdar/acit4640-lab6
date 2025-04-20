@@ -34,7 +34,6 @@ build {
     "source.amazon-ebs.ubuntu"
   ]
 
-  # First, create the directory where files will be uploaded
   provisioner "shell" {
     inline = [
       "echo creating directories",
@@ -45,7 +44,6 @@ build {
     ]
   }
 
-  # Then upload the files (after directory exists)
   provisioner "file" {
     source      = "files/index.html"
     destination = "/web/html/index.html"
